@@ -1,115 +1,236 @@
-/* ========== 3. HERO ========== */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-    padding-top: 7rem;
-}
-.hero-text {
-    flex: 1.2;
-}
-.hero-text h1 {
-    font-size: 3.8rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-.gradient {
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.hero-text p {
-    font-size: 1.1rem;
-    color: var(--text-dim);
-    max-width: 550px;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-.hero-text .typed-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: 0.5rem 0 1.8rem;
-    padding: 0.5rem 1rem;
-    background: rgba(124, 110, 255, 0.15);
-    display: inline-block;
-    border-radius: 50px;
-    backdrop-filter: blur(5px);
-    border-left: 3px solid var(--primary);
-}
-.hero-text .typed-title span {
-    color: var(--secondary);
-    font-weight: 600;
-}
-.btn-group {
-    display: flex;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-}
-.btn-primary, .btn-secondary {
-    padding: 0.9rem 2rem;
-    border-radius: 40px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-.btn-primary {
-    background: var(--gradient-1);
-    color: white;
-    box-shadow: 0 4px 14px rgba(124, 110, 255, 0.4);
-}
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(124, 110, 255, 0.6);
-}
-.btn-secondary {
-    border: 1.5px solid var(--primary);
-    color: var(--text-white);
-    background: transparent;
-}
-.btn-secondary:hover {
-    background: rgba(124, 110, 255, 0.15);
-    border-color: var(--primary-light);
-}
-.hero-image {
-    flex: 0.9;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-.rotating-card-bg {
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
-    border-radius: 35% 65% 70% 30% / 44% 30% 70% 56%;
-    filter: blur(25px);
-    opacity: 0.5;
-    animation: floatRotate 10s infinite alternate;
-    z-index: 0;
-}
-.main-card {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 30px;
-    overflow: hidden;
-    border: 3px solid rgba(255,255,255,0.2);
-    box-shadow: 0 25px 40px rgba(0,0,0,0.5);
-    transform: rotate(2deg);
-    transition: 0.4s;
-}
-.main-card:hover {
-    transform: scale(1.02) rotate(0deg);
-}
-.main-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Al-Falaq Pakaya | Portofolio PPLG</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- CSS External -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">✦ PORTFOLIO</div>
+    <button class="hamburger-btn" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+        <button class="close-btn" id="closeBtn"><i class="fas fa-times"></i></button>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <!-- HERO SECTION - FOTO DI KIRI, TEKS DI KANAN -->
+    <section id="home" class="hero container">
+        <div class="hero-image">
+            <div class="rotating-card-bg"></div>
+            <div class="main-card">
+                <img src="assets/images/FOTO.jpg" alt="Al-Falaq Pakaya" onerror="this.src='https://placehold.co/400x400/1e1f2e/7C6EFF?text=AL+FALAQ'">
+            </div>
+        </div>
+        <div class="hero-text">
+            <h1>Hello, I'm <span class="gradient">Al-Falaq</span></h1>
+            <p>A passionate 10th-grade PPLG student who loves gaming & coding. Currently sharpening my frontend skills, building interactive web experiences.</p>
+            <div class="typed-title">🔥 <span id="animated-subtitle"></span></div>
+            <div class="btn-group">
+                <a href="#projects" class="btn-primary"><i class="fab fa-github"></i> My Projects</a>
+                <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+            <div class="about-card-left">
+                <p>I'm Al-Falaq Pakaya, a student at SMK Negeri 1 Gorontalo majoring in PPLG (Software and Game Development). I'm deeply fascinated by how code brings ideas to life. My journey began with HTML/CSS, and now I'm exploring JavaScript to create dynamic websites. I believe in learning by doing, and every small project is a step toward mastery.</p>
+                <p>🎯 Currently focusing on frontend development & UI design. I also love playing games which inspires me to create interactive digital experiences.</p>
+            </div>
+            <div class="about-card-right">
+                <ul class="about-list">
+                    <li><span class="dot-blue"></span> ✔ Beginner Web Developer</li>
+                    <li><span class="dot-purple"></span> 🎮 Hobby: Gaming & Coding</li>
+                    <li><span class="dot-blue"></span> 📍 Based in Gorontalo, ID</li>
+                    <li><span class="dot-purple"></span> 🌱 Currently learning React & Node.js</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="container">
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="skill-categories-grid">
+            <div class="skill-category-card">
+                <h3><i class="fas fa-code"></i> Web Development</h3>
+                <div class="skill-pills-grid">
+                    <div class="skill-pill">HTML5</div>
+                    <div class="skill-pill">CSS3</div>
+                    <div class="skill-pill">JavaScript</div>
+                    <div class="skill-pill">Responsive Design</div>
+                </div>
+            </div>
+            <div class="skill-category-card">
+                <h3><i class="fas fa-laptop-code"></i> Tools & Versioning</h3>
+                <div class="skill-pills-grid">
+                    <div class="skill-pill">VS Code</div>
+                    <div class="skill-pill">Git & GitHub</div>
+                    <div class="skill-pill">Figma (basic)</div>
+                </div>
+            </div>
+            <div class="skill-category-card">
+                <h3><i class="fas fa-brain"></i> Other Strengths</h3>
+                <div class="skill-pills-grid">
+                    <div class="skill-pill">Problem Solving</div>
+                    <div class="skill-pill">Team Collaboration</div>
+                    <div class="skill-pill">Fast Learner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS - DENGAN FOTO LINK -->
+    <section id="projects" class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <!-- MUSIC PLAYER - PAKAI FOTO DARI LINK -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png" alt="Music Player Cover">
+                </div>
+                <div class="project-info">
+                    <h4>Music Player Web</h4>
+                    <p>A sleek web-based music player with playlist feature, built to master DOM manipulation and Audio API. Perfect for relaxing while coding.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                    </div>
+                    <a href="https://al-music-player.vercel.app/" target="_blank" class="live-demo-btn">Live Demo <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="project-info">
+                    <h4>Game Landing Page</h4>
+                    <p>Interactive landing page concept for a gaming community. Fully responsive with modern glassmorphism effects.</p>
+                    <div class="project-tags">
+                        <span>CSS Grid</span><span>Flexbox</span><span>Animations</span>
+                    </div>
+                    <a href="#" class="live-demo-btn" target="_blank">Coming Soon <i class="fas fa-rocket"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="project-info">
+                    <h4>To-Do App</h4>
+                    <p>Simple yet stylish to-do application with local storage. Helps me stay productive while learning JavaScript logic.</p>
+                    <div class="project-tags">
+                        <span>LocalStorage</span><span>Event Handler</span>
+                    </div>
+                    <a href="#" class="live-demo-btn" target="_blank">Preview Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-card">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>I'm open to new opportunities, collaborations, or just a chat about tech & music. Feel free to drop a message!</p>
+                <ul class="contact-details">
+                    <li><i class="fas fa-envelope"></i> fajrilukman194@gmail.com</li>
+                    <li><i class="fab fa-instagram"></i> @alfalaq.dev</li>
+                    <li><i class="fab fa-github"></i> github.com/alfalaq-pakaya</li>
+                </ul>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="4" placeholder="Your Message..."></textarea>
+                <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Al-Falaq Pakaya — Built with 💜 and <i class="fas fa-code"></i> passion for coding.</p>
+</footer>
+
+<script>
+    // Typed JS - Animasi Teks Berjalan
+    new Typed('#animated-subtitle', {
+        strings: ['PPLG Student ✨', 'Gamer 🎮', 'Beginner Web Dev 🚀', 'Creative Thinker'],
+        typeSpeed: 70,
+        backSpeed: 45,
+        loop: true,
+    });
+
+    // Mobile Navigation
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    const closeNav = document.getElementById('closeBtn');
+
+    function toggleMenu() {
+        navLinks.classList.toggle('active');
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    closeNav.addEventListener('click', toggleMenu);
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Active link on scroll
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Contact Form Alert
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('✨ Thanks for reaching out! I will respond soon. (Demo portofolio)');
+            contactForm.reset();
+        });
+    }
+</script>
+</body>
+</html>
