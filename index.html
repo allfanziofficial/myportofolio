@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Al-Falaq Pakaya</title>
+
+    <link rel="icon" type="image/png" href="assets/images/LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Portfolio</div>
+    <button class="hamburger-btn" id="hamburger-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="nav-links">
+        <li><button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="hero container">
+    <div class="hero-text">
+        <h1>Hello, I'm</h1>
+        <h1><span class="gradient">Al-Falaq Pakaya</span></h1>
+        <h2><span id="animated-subtitle"></span></h2>
+
+        <p>
+            A 10th-grade PPLG student who loves gaming and coding. I am currently learning web development and enjoy building simple projects to improve my skills step by step.
+        </p>
+
+        <div class="hero-btns">
+            <a href="#projects" class="btn-primary">View My Project</a>
+            <a href="#contact" class="btn-secondary">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="container">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-card">
+        <div class="about-card-left">
+            <p>
+                I am a student of PPLG (Software and Game Development) at SMK Negeri 1 Kota Gorontalo. I have a strong interest in technology, especially in coding and gaming. I am currently learning HTML, CSS, and JavaScript while building simple projects to improve my skills.
+            </p>
+        </div>
+
+        <div class="about-card-right">
+            <ul class="about-list">
+                <li><span class="dot-blue"></span>Beginner Web Developer</li>
+                <li><span class="dot-purple"></span>Hobby: Gaming & Coding</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="container">
+    <h2 class="section-title">Skills</h2>
+
+    <p class="section-subtitle">
+        Here are some of the basic skills I am currently learning.
+    </p>
+
+    <div class="skill-categories-grid">
+
+        <div class="skill-category-card">
+            <h3>Web Development</h3>
+            <div class="skill-pills-grid">
+                <div class="skill-pill">HTML</div>
+                <div class="skill-pill">CSS</div>
+                <div class="skill-pill">JavaScript</div>
+            </div>
+        </div>
+
+        <div class="skill-category-card">
+            <h3>Tools</h3>
+            <div class="skill-pills-grid">
+                <div class="skill-pill">VS Code</div>
+                <div class="skill-pill">GitHub</div>
+            </div>
+        </div>
+
+        <div class="skill-category-card">
+            <h3>Other</h3>
+            <div class="skill-pills-grid">
+                <div class="skill-pill">Gaming</div>
+                <div class="skill-pill">Problem Solving</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECT -->
+<section id="projects" class="container">
+    <h2 class="section-title">My Project</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <h4>Music Player Web</h4>
+            <p>
+                A simple web-based music player that I built to practice JavaScript and improve my frontend skills.
+            </p>
+
+            <a href="https://al-music-player.vercel.app/" target="_blank" class="btn-primary">
+                Live Demo
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="container">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-card">
+        <p>
+            I'm still learning and open to new experiences to improve my skills. Feel free to reach out!
+        </p>
+
+        <p>Email: alfalwpakayw@gmail.com</p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    © 2026 Al-Falaq Pakaya. All rights reserved.
+</footer>
+
+<script>
+new Typed('#animated-subtitle', {
+    strings: ['PPLG Student', 'Gamer', 'Beginner Web Developer'],
+    typeSpeed: 80,
+    backSpeed: 50,
+    loop: true
+});
+</script>
+
+</body>
+</html>
