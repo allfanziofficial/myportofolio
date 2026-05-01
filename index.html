@@ -40,6 +40,8 @@
 </nav>
 
 <main class="container">
+    <div class="header-spacer"></div>
+
     <section id="home" class="hero">
         <div class="hero-image">
             <div class="rotating-card-bg"></div>
@@ -64,7 +66,6 @@
         <div class="about-card">
             <div class="about-card-left">
                 <p>nama saya Al-Falaq Pakaya biasa di panggil aL, siswa di SMK Negeri 1 Gorontalo dengan jurusan PPLG (yang sebelumnya dikenal sebagai RPL). Saya punya ketertarikan besar di dunia coding karena menurut saya, lewat kode kita bisa mengubah ide jadi sesuatu yang nyata.</p>
-                <p style="margin-top: 15px;">🎯 saat ini saya fokus di pengembangan frontend dan desain UI. Perjalanan saya dimulai dari HTML dan CSS, lalu sekarang saya sedang mendalami JavaScript untuk membuat website yang lebih interaktif dan dinamis.</p>
             </div>
             <div class="about-card-right">
                 <ul class="about-list">
@@ -86,16 +87,22 @@
             </div>
             <div class="class-grid-v2">
                 <div class="class-card-v2" data-aos="flip-left">
-                    <img src="https://www.codeteam.zone.id/files/njaFyZItZ.jpg" alt="Class Photo 1">
-                    <div class="card-overlay-v2"><span>Solidarity</span></div>
+                    <div class="img-inner-container">
+                        <img src="https://www.codeteam.zone.id/files/njaFyZItZ.jpg" alt="Class Photo 1">
+                        <div class="card-overlay-v2"><span>Solidarity</span></div>
+                    </div>
                 </div>
                 <div class="class-card-v2" data-aos="flip-up" data-aos-delay="100">
-                    <img src="https://www.codeteam.zone.id/files/0lacdXvgR.jpg" alt="Class Photo 2">
-                    <div class="card-overlay-v2"><span>Innovation</span></div>
+                    <div class="img-inner-container">
+                        <img src="https://www.codeteam.zone.id/files/0lacdXvgR.jpg" alt="Class Photo 2">
+                        <div class="card-overlay-v2"><span>Innovation</span></div>
+                    </div>
                 </div>
                 <div class="class-card-v2" data-aos="flip-right" data-aos-delay="200">
-                    <img src="https://www.codeteam.zone.id/files/3FIgMMuEI.jpg" alt="Class Photo 3">
-                    <div class="card-overlay-v2"><span>Future</span></div>
+                    <div class="img-inner-container">
+                        <img src="https://www.codeteam.zone.id/files/3FIgMMuEI.jpg" alt="Class Photo 3">
+                        <div class="card-overlay-v2"><span>Future</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,12 +117,16 @@
             </div>
             <div class="org-gallery-fixed">
                 <div class="photo-wrapper-v2">
-                    <img src="https://www.codeteam.zone.id/files/nfLfhnax0.jpg" alt="PKS Al-Falaq 1">
-                    <div class="org-overlay-v2"><span>Discipline</span></div>
+                    <div class="img-inner-container">
+                        <img src="https://www.codeteam.zone.id/files/nfLfhnax0.jpg" alt="PKS Al-Falaq 1">
+                        <div class="org-overlay-v2"><span>Discipline</span></div>
+                    </div>
                 </div>
                 <div class="photo-wrapper-v2">
-                    <img src="https://www.codeteam.zone.id/files/lnVfZXPGy.jpg" alt="PKS Al-Falaq 2">
-                    <div class="org-overlay-v2"><span>Honor</span></div>
+                    <div class="img-inner-container">
+                        <img src="https://www.codeteam.zone.id/files/lnVfZXPGy.jpg" alt="PKS Al-Falaq 2">
+                        <div class="org-overlay-v2"><span>Honor</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,7 +150,6 @@
                     <div class="skill-pill">Git</div>
                     <div class="skill-pill">VS Code</div>
                     <div class="skill-pill">Figma</div>
-                    <div class="skill-pill">Vercel</div>
                 </div>
             </div>
         </div>
@@ -149,15 +159,12 @@
         <h2 class="section-title">My Work</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-img ratio-16-9">
-                    <img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png" alt="Music Player Cover">
+                <div class="project-img">
+                    <img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png" alt="Project">
                 </div>
                 <div class="project-info">
                     <h4>Music Player Web</h4>
                     <p>A sleek web-based music player with playlist feature.</p>
-                    <div class="project-tags">
-                        <span>HTML</span><span>CSS</span><span>JS</span>
-                    </div>
                     <a href="#" target="_blank" class="live-demo-btn">Live View</a>
                 </div>
             </div>
@@ -185,7 +192,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });
-
     new Typed('#animated-subtitle', {
         strings: ['PPLG Student ', 'Gaming ', 'Beginner Web Dev ', 'JS Learner'],
         typeSpeed: 60,
@@ -195,28 +201,15 @@
 
     const audio = document.getElementById("myAudio");
     const musicIcon = document.getElementById("music-icon");
-
     function toggleMusic() {
-        if (audio.paused) {
-            audio.play();
-            musicIcon.classList.replace("fa-music", "fa-pause");
-        } else {
-            audio.pause();
-            musicIcon.classList.replace("fa-pause", "fa-music");
-        }
+        if (audio.paused) { audio.play(); musicIcon.classList.replace("fa-music", "fa-pause"); }
+        else { audio.pause(); musicIcon.classList.replace("fa-pause", "fa-music"); }
     }
-
-    window.addEventListener('click', () => {
-        if (audio.paused) {
-            audio.play();
-            musicIcon.classList.replace("fa-music", "fa-pause");
-        }
-    }, { once: true });
+    window.addEventListener('click', () => { if (audio.paused) { audio.play(); musicIcon.classList.replace("fa-music", "fa-pause"); } }, { once: true });
 
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
     const closeBtn = document.getElementById('closeBtn');
-
     hamburger.onclick = () => navLinks.classList.add('active');
     closeBtn.onclick = () => navLinks.classList.remove('active');
 
