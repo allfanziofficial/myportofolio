@@ -18,7 +18,7 @@
 }
 
 body {
-    /* FONT UTAMA: INTER */
+    /* FONT UTAMA BARU: INTER (Modern & Clean) */
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-white);
@@ -41,11 +41,9 @@ body {
 
 /* Layout */
 .container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-.header-spacer { height: 90px; } /* Jarak biar g nempel logo di hp */
 section { padding: 4rem 0; }
-
 .section-title {
-    /* FONT JUDUL: SPACE GROTESK */
+    /* FONT JUDUL BARU: SPACE GROTESK (Tech Style, Ganteng Parah) */
     font-family: 'Space Grotesk', sans-serif;
     font-size: var(--font-size-h2); font-weight: 800; text-align: center; margin-bottom: 2rem;
     background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -70,7 +68,7 @@ nav.scrolled { top: 0; width: 100%; border-radius: 0; background: var(--bg-dark)
 .hamburger-btn, .close-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; }
 
 /* Hero */
-.hero { min-height: 100vh; display: flex; flex-direction: column !important; align-items: center; justify-content: center; gap: 1.5rem; padding-top: 50px; text-align: center; }
+.hero { min-height: 100vh; display: flex; flex-direction: column !important; align-items: center; justify-content: center; gap: 1.5rem; padding-top: 120px; text-align: center; }
 .hero-text { width: 100%; max-width: 500px; text-align: center; }
 .hero-text h1 { font-family: 'Space Grotesk', sans-serif; font-size: var(--font-size-h1); font-weight: 800; line-height: 1.1; margin-bottom: 0.8rem; }
 .gradient { background: var(--gradient-1); -webkit-background-clip: text; color: transparent; }
@@ -81,26 +79,27 @@ nav.scrolled { top: 0; width: 100%; border-radius: 0; background: var(--bg-dark)
 .btn-secondary { border: 1px solid var(--primary); color: white; padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 700; }
 
 .hero-image { position: relative; width: 200px; height: 200px; order: -1; animation: float 4s infinite ease-in-out; }
-.rotating-card-bg { position: absolute; width: 220px; height: 220px; background: var(--gradient-1); border-radius: 40%; filter: blur(30px); opacity: 0.4; z-index: 1; }
-.main-card { position: relative; width: 200px; height: 200px; border-radius: 2rem; overflow: hidden; border: 3px solid rgba(255,255,255,0.1); z-index: 2; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+.rotating-card-bg { position: absolute; width: 220px; height: 220px; background: var(--gradient-1); border-radius: 40%; filter: blur(30px); opacity: 0.4; }
+.main-card { position: relative; width: 200px; height: 200px; border-radius: 2rem; overflow: hidden; border: 3px solid rgba(255,255,255,0.1); }
 .main-card img { width: 100%; height: 100%; object-fit: cover; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-/* Cards Utama (Muter ke Flexbox biar g nembus) */
+/* Cards & Sections (Method Flexbox biar g nembus) */
+.about-card, .skill-category-card, .project-card, .contact-card, .org-container, .class-container { background: var(--bg-card); border-radius: var(--border-radius-card); padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
+.about-card { display: flex; flex-direction: column; gap: 1rem; }
+.about-card p { font-size: 0.95rem; color: #E0E0E0; }
+.about-card-right { background: rgba(0,0,0,0.2); border-radius: 1rem; padding: 1rem; }
+.about-list li { margin: 0.6rem 0; font-size: 0.85rem; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.dot-blue { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 5px var(--primary); }
+.dot-purple { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+
+/* Layout Flex biar g nembus di hp */
 .card-responsive {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
 }
-
-.about-card, .skill-category-card, .project-card, .contact-card, .org-container, .class-container { background: var(--bg-card); border-radius: var(--border-radius-card); padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
-.about-card { display: flex; flex-direction: column; gap: 1rem; }
-.about-card p { font-size: 0.95rem; color: #E0E0E0; }
-.about-card-right { background: rgba(0,0,0,0.2); border-radius: 1rem; padding: 1rem; margin-top: 1rem; }
-.about-list li { margin: 0.6rem 0; font-size: 0.85rem; display: flex; align-items: center; gap: 10px; font-weight: 500; }
-.dot-blue { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 5px var(--primary); }
-.dot-purple { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
 
 /* ======= CLASS GALLERY V2 (Tanpa aspect-ratio) ======= */
 .class-grid-v2 {
@@ -122,7 +121,7 @@ nav.scrolled { top: 0; width: 100%; border-radius: 0; background: var(--bg-dark)
     display: block;
 }
 .card-overlay-v2 {
-    position: absolute; inset: 0;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(11, 12, 16, 0.7);
     display: flex; align-items: center; justify-content: center;
     opacity: 0; transition: 0.4s;
@@ -162,6 +161,7 @@ nav.scrolled { top: 0; width: 100%; border-radius: 0; background: var(--bg-dark)
 .photo-wrapper-v2:hover .org-overlay-v2 { opacity: 1; }
 
 /* ======= SKILLS ANIMATION (Glow & Float) ======= */
+.skill-category-card h3 { font-family: 'Space Grotesk', sans-serif; }
 .skill-pills-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
 .skill-pill {
     background: rgba(255,255,255,0.05); padding: 0.4rem 0.8rem;
@@ -189,7 +189,7 @@ nav.scrolled { top: 0; width: 100%; border-radius: 0; background: var(--bg-dark)
 /* Responsive Mobile */
 @media (min-width: 1024px) {
     .container { width: 90%; }
-    .hero { flex-direction: row !important; text-align: left; gap: 4rem; padding-top: 100px; }
+    .hero { flex-direction: row !important; text-align: left; gap: 4rem; }
     .hero-text { text-align: left; }
     .btn-group { justify-content: flex-start; }
     .org-gallery-fixed { flex-direction: row; justify-content: center; flex-wrap: wrap;}
