@@ -6,10 +6,17 @@
     <title>Al-Falaq Pakaya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<audio id="myAudio" loop>
+    <source src="https://www.codeteam.zone.id/files/hsb12dn4G.opus" type="audio/ogg">
+</audio>
+<div id="music-control" onclick="toggleMusic()">
+    <i id="music-icon" class="fas fa-music" style="color: white;"></i>
+</div>
 
 <div class="bg-animate">
     <div class="circle"></div>
@@ -50,16 +57,13 @@
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" data-aos="fade-up">
         <h2 class="section-title">About Me</h2>
         <div class="about-card">
             <div class="about-card-left">
                 <p>nama saya Al-Falaq Pakaya biasa di panggil aL, siswa di SMK Negeri 1 Gorontalo dengan jurusan PPLG (yang sebelumnya dikenal sebagai RPL). Saya punya ketertarikan besar di dunia coding karena menurut saya, lewat kode kita bisa mengubah ide jadi sesuatu yang nyata.
-
-saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari proyek-proyek kecil yang saya kerjakan, saya merasa terus berkembang dan semakin paham. Buat saya, setiap proses itu bagian penting untuk jadi lebih baik ke depannya.
-</p>
-                <p>🎯 saat ini saya fokus di pengembangan frontend dan desain UI. Perjalanan saya dimulai dari HTML dan CSS, lalu sekarang saya sedang mendalami JavaScript untuk membuat website yang lebih interaktif dan dinamis.
-</p>
+                saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari proyek-proyek kecil yang saya kerjakan, saya merasa terus berkembang dan semakin paham. Buat saya, setiap proses itu bagian penting untuk jadi lebih baik ke depannya.</p>
+                <p>🎯 saat ini saya fokus di pengembangan frontend dan desain UI. Perjalanan saya dimulai dari HTML dan CSS, lalu sekarang saya sedang mendalami JavaScript untuk membuat website yang lebih interaktif dan dinamis.</p>
             </div>
             <div class="about-card-right">
                 <ul class="about-list">
@@ -72,7 +76,7 @@ saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari p
         </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" data-aos="fade-up">
         <h2 class="section-title">Skills & Tools</h2>
         <div class="skill-categories-grid">
             <div class="skill-category-card">
@@ -95,7 +99,7 @@ saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari p
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" data-aos="fade-up">
         <h2 class="section-title">My Work</h2>
         <div class="projects-grid">
             <div class="project-card">
@@ -111,10 +115,10 @@ saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari p
                     <a href="#" target="_blank" class="live-demo-btn">Live View</a>
                 </div>
             </div>
-            </div>
+        </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-aos="fade-up">
         <h2 class="section-title">Connect</h2>
         <div class="contact-card">
             <form class="contact-form">
@@ -128,11 +132,14 @@ saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari p
 </main>
 
 <footer>
-    <p>© 2026 Al-Falaq Pakaya —  2026</p>
+    <p>© 2026 Al-Falaq Pakaya — 2026</p>
 </footer>
 
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Typed JS
+    AOS.init({ duration: 1000, once: true });
+
     new Typed('#animated-subtitle', {
         strings: ['PPLG Student ', 'Gaming ', 'Beginner Web Dev ', 'JS Learner'],
         typeSpeed: 60,
@@ -140,7 +147,26 @@ saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari p
         loop: true,
     });
 
-    // Mobile Navigation
+    const audio = document.getElementById("myAudio");
+    const musicIcon = document.getElementById("music-icon");
+
+    function toggleMusic() {
+        if (audio.paused) {
+            audio.play();
+            musicIcon.classList.replace("fa-music", "fa-pause");
+        } else {
+            audio.pause();
+            musicIcon.classList.replace("fa-pause", "fa-music");
+        }
+    }
+
+    window.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            musicIcon.classList.replace("fa-music", "fa-pause");
+        }
+    }, { once: true });
+
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
     const closeBtn = document.getElementById('closeBtn');
@@ -148,7 +174,6 @@ saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari p
     hamburger.onclick = () => navLinks.classList.add('active');
     closeBtn.onclick = () => navLinks.classList.remove('active');
 
-    // Scrolled Navbar Effect
     window.onscroll = () => {
         const nav = document.getElementById('navbar');
         if (window.scrollY > 50) nav.classList.add('scrolled');
