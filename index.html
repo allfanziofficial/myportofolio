@@ -2,194 +2,235 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio | Al-Falaq Pakaya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Al-Falaq Pakaya | Portofolio PPLG</title>
 
-    <link rel="icon" type="image/png" href="assets/images/LOGO.png">
-    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Typed.js -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- CSS External -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-    <div class="logo">Portfolio</div>
-    <button class="hamburger-btn" id="hamburger-btn">
-        <i class="fas fa-bars"></i>
-    </button>
-    <ul class="nav-links" id="nav-links">
-        <li><button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button></li>
+    <div class="logo">✦ PORTFOLIO</div>
+    <button class="hamburger-btn" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+        <button class="close-btn" id="closeBtn"><i class="fas fa-times"></i></button>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Project</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<div class="overlay" id="overlay"></div>
-
 <main>
-
-<!-- HERO -->
-<section id="home" class="hero container">
-    <div class="hero-text">
-        <h1>Hello, I'm</h1>
-        <h1><span class="gradient">Al-Falaq Pakaya</span></h1>
-        <!-- ANIMASI TEKS PINDAH KE SINI - DI BAWAH NAMA, DI ATAS PARAGRAF -->
-        <h2><span id="animated-subtitle"></span></h2>
-        <p>
-            A 10th-grade PPLG student who loves gaming and coding. I am currently learning web development and enjoy building simple projects to improve my skills step by step.
-        </p>
-        <div class="hero-btns">
-            <a href="#projects" class="btn-primary">View My Project</a>
-            <a href="#contact" class="btn-secondary">Contact Me</a>
-        </div>
-    </div>
-
-    <div class="hero-image">
-        <div class="rotating-card-bg"></div>
-        <div class="main-card">
-            <img src="assets/images/FOTO.jpg" alt="Foto Profil Al-Falaq">
-        </div>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="container">
-    <h2 class="section-title">About Me</h2>
-
-    <div class="about-card">
-        <div class="about-card-left">
-            <p>
-                I am a student of PPLG (Software and Game Development) at SMK Negeri 1 Kota Gorontalo. I have a strong interest in technology, especially in coding and gaming. I am currently learning HTML, CSS, and JavaScript while building simple projects to improve my skills.
-            </p>
-        </div>
-
-        <div class="about-card-right">
-            <ul class="about-list">
-                <li><span class="dot-blue"></span>Beginner Web Developer</li>
-                <li><span class="dot-purple"></span>Hobby: Gaming & Coding</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="container">
-    <h2 class="section-title">Skills</h2>
-
-    <p class="section-subtitle">
-        Here are some of the basic skills I am currently learning.
-    </p>
-
-    <div class="skill-categories-grid">
-
-        <div class="skill-category-card">
-            <h3>Web Development</h3>
-            <div class="skill-pills-grid">
-                <div class="skill-pill">HTML</div>
-                <div class="skill-pill">CSS</div>
-                <div class="skill-pill">JavaScript</div>
+    <!-- HERO SECTION - FOTO DI KIRI, TEKS DI KANAN -->
+    <section id="home" class="hero container">
+        <div class="hero-image">
+            <div class="rotating-card-bg"></div>
+            <div class="main-card">
+                <img src="assets/images/FOTO.jpg" alt="Al-Falaq Pakaya" onerror="this.src='https://placehold.co/400x400/1e1f2e/7C6EFF?text=AL+FALAQ'">
             </div>
         </div>
-
-        <div class="skill-category-card">
-            <h3>Tools</h3>
-            <div class="skill-pills-grid">
-                <div class="skill-pill">VS Code</div>
-                <div class="skill-pill">GitHub</div>
+        <div class="hero-text">
+            <h1>Hello, I'm <span class="gradient">Al-Falaq</span></h1>
+            <p>A passionate 10th-grade PPLG student who loves gaming & coding. Currently sharpening my frontend skills, building interactive web experiences.</p>
+            <div class="typed-title">🔥 <span id="animated-subtitle"></span></div>
+            <div class="btn-group">
+                <a href="#projects" class="btn-primary"><i class="fab fa-github"></i> My Projects</a>
+                <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
             </div>
         </div>
+    </section>
 
-        <div class="skill-category-card">
-            <h3>Other</h3>
-            <div class="skill-pills-grid">
-                <div class="skill-pill">Gaming</div>
-                <div class="skill-pill">Problem Solving</div>
+    <!-- ABOUT -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+            <div class="about-card-left">
+                <p>I'm Al-Falaq Pakaya, a student at SMK Negeri 1 Gorontalo majoring in PPLG (Software and Game Development). I'm deeply fascinated by how code brings ideas to life. My journey began with HTML/CSS, and now I'm exploring JavaScript to create dynamic websites. I believe in learning by doing, and every small project is a step toward mastery.</p>
+                <p>🎯 Currently focusing on frontend development & UI design. I also love playing games which inspires me to create interactive digital experiences.</p>
+            </div>
+            <div class="about-card-right">
+                <ul class="about-list">
+                    <li><span class="dot-blue"></span> ✔ Beginner Web Developer</li>
+                    <li><span class="dot-purple"></span> 🎮 Hobby: Gaming & Coding</li>
+                    <li><span class="dot-blue"></span> 📍 Based in Gorontalo, ID</li>
+                    <li><span class="dot-purple"></span> 🌱 Currently learning React & Node.js</li>
+                </ul>
             </div>
         </div>
+    </section>
 
-    </div>
-</section>
-
-<!-- PROJECT -->
-<section id="projects" class="container">
-    <h2 class="section-title">My Project</h2>
-
-    <div class="projects-grid">
-        <div class="project-card">
-            <div class="project-img">
-                <img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png" alt="Music Player Cover">
-            </div>
-            <div class="project-info">
-                <h4>Music Player Web</h4>
-                <p>
-                    A simple web-based music player that I built to practice JavaScript and improve my frontend skills.
-                </p>
-                <div class="project-tags">
-                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+    <!-- SKILLS -->
+    <section id="skills" class="container">
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="skill-categories-grid">
+            <div class="skill-category-card">
+                <h3><i class="fas fa-code"></i> Web Development</h3>
+                <div class="skill-pills-grid">
+                    <div class="skill-pill">HTML5</div>
+                    <div class="skill-pill">CSS3</div>
+                    <div class="skill-pill">JavaScript</div>
+                    <div class="skill-pill">Responsive Design</div>
                 </div>
-                <a href="https://al-music-player.vercel.app/" target="_blank" class="live-demo-btn">
-                    Live Demo <i class="fas fa-arrow-right"></i>
-                </a>
+            </div>
+            <div class="skill-category-card">
+                <h3><i class="fas fa-laptop-code"></i> Tools & Versioning</h3>
+                <div class="skill-pills-grid">
+                    <div class="skill-pill">VS Code</div>
+                    <div class="skill-pill">Git & GitHub</div>
+                    <div class="skill-pill">Figma (basic)</div>
+                </div>
+            </div>
+            <div class="skill-category-card">
+                <h3><i class="fas fa-brain"></i> Other Strengths</h3>
+                <div class="skill-pills-grid">
+                    <div class="skill-pill">Problem Solving</div>
+                    <div class="skill-pill">Team Collaboration</div>
+                    <div class="skill-pill">Fast Learner</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact" class="container">
-    <h2 class="section-title">Contact</h2>
+    <!-- PROJECTS - DENGAN FOTO LINK -->
+    <section id="projects" class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <!-- MUSIC PLAYER - PAKAI FOTO DARI LINK -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png" alt="Music Player Cover">
+                </div>
+                <div class="project-info">
+                    <h4>Music Player Web</h4>
+                    <p>A sleek web-based music player with playlist feature, built to master DOM manipulation and Audio API. Perfect for relaxing while coding.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                    </div>
+                    <a href="https://al-music-player.vercel.app/" target="_blank" class="live-demo-btn">Live Demo <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="project-info">
+                    <h4>Game Landing Page</h4>
+                    <p>Interactive landing page concept for a gaming community. Fully responsive with modern glassmorphism effects.</p>
+                    <div class="project-tags">
+                        <span>CSS Grid</span><span>Flexbox</span><span>Animations</span>
+                    </div>
+                    <a href="#" class="live-demo-btn" target="_blank">Coming Soon <i class="fas fa-rocket"></i></a>
+                </div>
+            </div>
 
-    <div class="contact-card">
-        <p>
-            I'm still learning and open to new experiences to improve my skills. Feel free to reach out!
-        </p>
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="project-info">
+                    <h4>To-Do App</h4>
+                    <p>Simple yet stylish to-do application with local storage. Helps me stay productive while learning JavaScript logic.</p>
+                    <div class="project-tags">
+                        <span>LocalStorage</span><span>Event Handler</span>
+                    </div>
+                    <a href="#" class="live-demo-btn" target="_blank">Preview Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <p>Email: fajrilukman194@gmail.com</p>
-    </div>
-</section>
-
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-card">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>I'm open to new opportunities, collaborations, or just a chat about tech & music. Feel free to drop a message!</p>
+                <ul class="contact-details">
+                    <li><i class="fas fa-envelope"></i> fajrilukman194@gmail.com</li>
+                    <li><i class="fab fa-instagram"></i> @alfalaq.dev</li>
+                    <li><i class="fab fa-github"></i> github.com/alfalaq-pakaya</li>
+                </ul>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="4" placeholder="Your Message..."></textarea>
+                <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
 </main>
 
 <footer>
-    © 2026 Al-Falaq Pakaya. All rights reserved.
+    <p>© 2026 Al-Falaq Pakaya — Built with 💜 and <i class="fas fa-code"></i> passion for coding.</p>
 </footer>
 
 <script>
-    // ANIMASI TEKS - HANYA BERJALAN, TIDAK NUTUPIN FOTO
+    // Typed JS - Animasi Teks Berjalan
     new Typed('#animated-subtitle', {
-        strings: ['PPLG Student', 'Gamer', 'Beginner Web Developer'],
-        typeSpeed: 80,
-        backSpeed: 50,
-        loop: true
+        strings: ['PPLG Student ✨', 'Gamer 🎮', 'Beginner Web Dev 🚀', 'Creative Thinker'],
+        typeSpeed: 70,
+        backSpeed: 45,
+        loop: true,
     });
 
     // Mobile Navigation
-    const hamburger = document.getElementById('hamburger-btn');
-    const navLinks = document.getElementById('nav-links');
-    const closeBtn = document.getElementById('close-btn');
-    const overlay = document.getElementById('overlay');
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    const closeNav = document.getElementById('closeBtn');
 
-    function openMenu() {
-        navLinks.classList.add('active');
-        overlay.classList.add('active');
+    function toggleMenu() {
+        navLinks.classList.toggle('active');
     }
-
-    function closeMenu() {
-        navLinks.classList.remove('active');
-        overlay.classList.remove('active');
-    }
-
-    hamburger.addEventListener('click', openMenu);
-    closeBtn.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-
+    hamburger.addEventListener('click', toggleMenu);
+    closeNav.addEventListener('click', toggleMenu);
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
     });
-</script>
 
+    // Active link on scroll
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Contact Form Alert
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('✨ Thanks for reaching out! I will respond soon. (Demo portofolio)');
+            contactForm.reset();
+        });
+    }
+</script>
 </body>
 </html>
