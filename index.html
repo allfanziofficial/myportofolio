@@ -11,9 +11,6 @@
 </head>
 <body>
 
-<div class="cursor-dot"></div>
-<div class="cursor-outline"></div>
-
 <audio id="myAudio" loop>
     <source src="https://www.codeteam.zone.id/files/hsb12dn4G.opus" type="audio/ogg">
 </audio>
@@ -88,11 +85,11 @@
             </div>
             <div class="org-gallery">
                 <div class="photo-wrapper">
-                    <img src="https://h.uguu.se/RLZaWPsx.jpg" alt="PKS Action 1">
+                    <img src="https://h.uguu.se/RLZaWPsx.jpg" alt="PKS Al-Falaq 1">
                     <div class="photo-overlay"><span>Dicipline</span></div>
                 </div>
                 <div class="photo-wrapper">
-                    <img src="https://o.uguu.se/HHjnObpE.jpg" alt="PKS Action 2">
+                    <img src="https://o.uguu.se/HHjnObpE.jpg" alt="PKS Al-Falaq 2">
                     <div class="photo-overlay"><span>Honor</span></div>
                 </div>
             </div>
@@ -161,22 +158,6 @@
 <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    const cursorDot = document.querySelector(".cursor-dot");
-    const cursorOutline = document.querySelector(".cursor-outline");
-
-    window.addEventListener("mousemove", (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
-
     AOS.init({ duration: 1000, once: true });
 
     new Typed('#animated-subtitle', {
