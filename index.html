@@ -61,16 +61,21 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-card">
             <div class="about-card-left">
-                <p>nama saya Al-Falaq Pakaya biasa di panggil aL, siswa di SMK Negeri 1 Gorontalo dengan jurusan PPLG (yang sebelumnya dikenal sebagai RPL). Saya punya ketertarikan besar di dunia coding karena menurut saya, lewat kode kita bisa mengubah ide jadi sesuatu yang nyata.
-                saya juga percaya kalau cara belajar terbaik itu dengan langsung praktik. Dari proyek-proyek kecil yang saya kerjakan, saya merasa terus berkembang dan semakin paham. Buat saya, setiap proses itu bagian penting untuk jadi lebih baik ke depannya.</p>
-                <p>🎯 saat ini saya fokus di pengembangan frontend dan desain UI. Perjalanan saya dimulai dari HTML dan CSS, lalu sekarang saya sedang mendalami JavaScript untuk membuat website yang lebih interaktif dan dinamis.</p>
+                <p>nama saya Al-Falaq Pakaya biasa di panggil aL, siswa di SMK Negeri 1 Gorontalo dengan jurusan PPLG (yang sebelumnya dikenal sebagai RPL). Saya punya ketertarikan besar di dunia coding karena menurut saya, lewat kode kita bisa mengubah ide jadi sesuatu yang nyata.</p>
+                
+                <p style="margin-top: 15px; border-left: 3px solid var(--primary); padding-left: 15px; color: var(--text-white);">
+                    Selain aktif di coding, saya juga merupakan anggota organisasi <strong>PKS (Patroli Keamanan Sekolah) Polresta Gorontalo Kota</strong>. Pengalaman ini membentuk karakter saya menjadi pribadi yang lebih disiplin, tegas, dan bertanggung jawab.
+                </p>
+
+                <p style="margin-top: 15px;">🎯 saat ini saya fokus di pengembangan frontend dan desain UI. Perjalanan saya dimulai dari HTML dan CSS, lalu sekarang saya sedang mendalami JavaScript untuk membuat website yang lebih interaktif dan dinamis.</p>
             </div>
             <div class="about-card-right">
                 <ul class="about-list">
                     <li><span class="dot-blue"></span> ✔ Beginner Web Developer</li>
-                    <li><span class="dot-purple"></span> 🎮 Hobby: Gaming & Coding</li>
-                    <li><span class="dot-blue"></span> 📍 Based in Gorontalo, Ayula ID</li>
-                    <li><span class="dot-purple"></span> 🌱 Currently learning React</li>
+                    <li><span class="dot-purple"></span> 👮 PKS Polresta Gorontalo Kota</li>
+                    <li><span class="dot-blue"></span> 🎮 Hobby: Gaming & Coding</li>
+                    <li><span class="dot-purple"></span> 📍 Based in Gorontalo, Ayula ID</li>
+                    <li><span class="dot-blue"></span> 🌱 Currently learning React</li>
                 </ul>
             </div>
         </div>
@@ -138,8 +143,10 @@
 <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    // Animasi Scroll
     AOS.init({ duration: 1000, once: true });
 
+    // Efek Ketik
     new Typed('#animated-subtitle', {
         strings: ['PPLG Student ', 'Gaming ', 'Beginner Web Dev ', 'JS Learner'],
         typeSpeed: 60,
@@ -147,6 +154,7 @@
         loop: true,
     });
 
+    // Kontrol Musik
     const audio = document.getElementById("myAudio");
     const musicIcon = document.getElementById("music-icon");
 
@@ -160,6 +168,7 @@
         }
     }
 
+    // Autoplay Hack
     window.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
@@ -167,6 +176,7 @@
         }
     }, { once: true });
 
+    // Menu Mobile
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
     const closeBtn = document.getElementById('closeBtn');
@@ -174,6 +184,7 @@
     hamburger.onclick = () => navLinks.classList.add('active');
     closeBtn.onclick = () => navLinks.classList.remove('active');
 
+    // Navbar Scroll
     window.onscroll = () => {
         const nav = document.getElementById('navbar');
         if (window.scrollY > 50) nav.classList.add('scrolled');
