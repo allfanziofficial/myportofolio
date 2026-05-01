@@ -33,7 +33,7 @@ body {
 .circle:nth-child(3) { background: #A45EE5; right: 0; animation-delay: -10s; }
 @keyframes move { from { transform: translate(-10%, -10%); } to { transform: translate(10%, 10%); } }
 
-.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+.container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 section { padding: 4rem 0; }
 .section-title {
     font-size: var(--font-size-h2); font-weight: 800; text-align: center; margin-bottom: 2rem;
@@ -81,62 +81,61 @@ nav.scrolled { top: 0; width: 100%; border-radius: 0; background: var(--bg-dark)
 .dot-blue { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; }
 .dot-purple { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
 
-/* ======= RENEWED GALLERY STYLE (16:9) ======= */
+/* ======= CLASS & GALLERY (16:9) ======= */
 .ratio-16-9 {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* Ini kunci aspek rasio 16:9 */
+    padding-top: 56.25%;
     overflow: hidden;
     border-radius: 1.5rem;
-    border: 2px solid rgba(255, 255, 255, 0.05);
 }
-
 .ratio-16-9 img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Mencegah gambar gepeng, muka tetap proporsional */
-    object-position: center; /* Fokus di tengah gambar */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
 }
 
-/* Update My Class */
-.class-container { background: rgba(124, 110, 255, 0.03); border-radius: 2.5rem; padding: 2rem; border: 1px dashed rgba(124, 110, 255, 0.3); margin-bottom: 2rem; }
-.class-header { text-align: center; margin-bottom: 2rem; }
-.class-badge { background: var(--gradient-1); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; font-size: 0.8rem; display: inline-block; margin-bottom: 1rem; }
 .class-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-.class-card { perspective: 1000px; }
-.class-card-overlay { position: absolute; inset: 0; background: rgba(11, 12, 16, 0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; z-index: 2; }
-.class-card-overlay span { color: white; font-weight: bold; border: 2px solid white; padding: 0.4rem 1rem; transform: translateY(10px); transition: 0.4s; }
-.class-card:hover .ratio-16-9 { transform: scale(1.05) rotate(2deg); border-color: var(--secondary); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-.class-card:hover .class-card-overlay { opacity: 1; }
-.class-card:hover .class-card-overlay span { transform: translateY(0); }
+.class-card:hover .ratio-16-9 { transform: scale(1.05) rotate(2deg); transition: 0.5s; }
 
-/* Update Organisasi */
-.org-container { background: var(--bg-card); border-radius: 2rem; padding: 2rem; border: 1px solid rgba(124, 110, 255, 0.2); text-align: center; }
-.org-badge { background: var(--gradient-1); display: inline-block; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; margin-bottom: 1rem; font-size: 0.9rem; }
-.org-info p { color: var(--text-dim); margin-bottom: 2rem; }
-.org-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; perspective: 1000px; }
-.photo-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, rgba(124, 110, 255, 0.9)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 1rem; opacity: 0; transition: 0.4s; z-index: 2; }
-.photo-overlay span { color: white; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-.photo-wrapper { transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer; }
-.photo-wrapper img { transition: 0.6s; }
-.photo-wrapper:hover { transform: translateY(-10px) rotateY(10deg); border-color: var(--primary); box-shadow: 0 20px 40px rgba(124, 110, 255, 0.4); }
-.photo-wrapper:hover img { transform: scale(1.1); }
-.photo-wrapper:hover .photo-overlay { opacity: 1; }
+/* ======= ORGANIZATION FIX ======= */
+.org-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+.photo-wrapper-org {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+.photo-wrapper-org img { width: 100%; height: 100%; object-fit: cover; }
+.photo-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(124, 110, 255, 0.8)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 1rem; opacity: 0; transition: 0.4s; }
+.photo-wrapper-org:hover .photo-overlay { opacity: 1; }
 
-/* Skills & Projects */
-.skill-categories-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
-.skill-pill { background: rgba(255,255,255,0.05); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1); }
-.project-card { padding: 0; overflow: hidden; }
-/* Project img juga dibuat 16:9 agar muka di cover project aman */
-.project-info { padding: 1rem; text-align: center; }
-.live-demo-btn { background: var(--gradient-1); color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-top: 1rem; font-size: 0.8rem; }
+/* ======= SKILLS ANIMATION ======= */
+.animated-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(124,110,255,0.2); }
+.skill-pill {
+    background: rgba(255,255,255,0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    animation: floatSkill 3s infinite ease-in-out;
+}
+@keyframes floatSkill { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-#music-control { position: fixed; bottom: 20px; right: 20px; z-index: 2000; background: var(--gradient-1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 15px var(--primary); animation: pulse 2s infinite; }
-@keyframes pulse { 0% { transform: scale(1); } 70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(124, 110, 255, 0); } 100% { transform: scale(1); } }
-
+/* ======= RESPONSIVE QUERIES ======= */
+@media (min-width: 1024px) {
+    .hero { flex-direction: row !important; }
+    .org-gallery { flex-direction: row; justify-content: center; }
+    .photo-wrapper-org { width: 48%; }
+}
 @media (max-width: 900px) {
     .nav-links { position: fixed; top: 0; right: -100%; width: 250px; height: 100vh; background: #111; flex-direction: column; padding: 5rem 2rem; transition: 0.4s; }
     .nav-links.active { right: 0; }
