@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-Falaq Pakaya | Portofolio PPLG</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <div class="logo">✦ PORTFOLIO</div>
+<div class="bg-animate">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<nav id="navbar">
+    <div class="logo">✦ FALAQ.<span>DEV</span></div>
     <button class="hamburger-btn" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
     <ul class="nav-links" id="navLinks">
         <button class="close-btn" id="closeBtn"><i class="fas fa-times"></i></button>
@@ -34,12 +39,13 @@
             </div>
         </div>
         <div class="hero-text">
+            <div class="badge">Available for Projects</div>
             <h1>Hello, I'm <span class="gradient">Al-Falaq</span></h1>
-            <p>A passionate 10th-grade PPLG student who loves gaming & coding. Currently sharpening my frontend skills, building interactive web experiences.</p>
-            <div class="typed-title">🔥 <span id="animated-subtitle"></span></div>
+            <p>A passionate 10th-grade PPLG student who loves gaming & coding. Building interactive web experiences with modern technology.</p>
+            <div class="typed-box">🚀 <span id="animated-subtitle"></span></div>
             <div class="btn-group">
-                <a href="#projects" class="btn-primary"><i class="fab fa-github"></i> My Projects</a>
-                <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
             </div>
         </div>
     </section>
@@ -48,15 +54,14 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-card">
             <div class="about-card-left">
-                <p>I'm Al-Falaq Pakaya, a student at SMK Negeri 1 Gorontalo majoring in PPLG. My journey began with HTML/CSS, and now I'm exploring JavaScript to create dynamic websites.</p>
-                <p>🎯 Focusing on frontend development & UI design. I love playing games which inspires my digital experiences.</p>
+                <p>I'm Al-Falaq Pakaya, a student at SMK Negeri 1 Gorontalo majoring in PPLG. I love how code can solve real-world problems.</p>
+                <p>🎯 Focusing on frontend development. I also love playing games which inspires my creativity in UI design.</p>
             </div>
             <div class="about-card-right">
                 <ul class="about-list">
-                    <li><span class="dot-blue"></span> ✔ Beginner Web Dev</li>
-                    <li><span class="dot-purple"></span> 🎮 Hobby: Gaming</li>
-                    <li><span class="dot-blue"></span> 📍 Gorontalo, ID</li>
-                    <li><span class="dot-purple"></span> 🌱 Learning React</li>
+                    <li><span class="dot-blue"></span> Web Developer</li>
+                    <li><span class="dot-purple"></span> Gamer & Designer</li>
+                    <li><span class="dot-blue"></span> Gorontalo, ID</li>
                 </ul>
             </div>
         </div>
@@ -66,7 +71,7 @@
         <h2 class="section-title">Skills & Tools</h2>
         <div class="skill-categories-grid">
             <div class="skill-category-card">
-                <h3><i class="fas fa-code"></i> Web Dev</h3>
+                <h3><i class="fas fa-code"></i> Frontend</h3>
                 <div class="skill-pills-grid">
                     <div class="skill-pill">HTML5</div>
                     <div class="skill-pill">CSS3</div>
@@ -74,40 +79,40 @@
                 </div>
             </div>
             <div class="skill-category-card">
-                <h3><i class="fas fa-laptop-code"></i> Tools</h3>
+                <h3><i class="fas fa-tools"></i> Others</h3>
                 <div class="skill-pills-grid">
-                    <div class="skill-pill">VS Code</div>
                     <div class="skill-pill">Git</div>
-                    <div class="skill-pill">Vercel</div>
+                    <div class="skill-pill">VS Code</div>
+                    <div class="skill-pill">Figma</div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">Latest Work</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-img">
-                    <img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png" alt="Music Player">
+                    <img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png" alt="Project">
                 </div>
                 <div class="project-info">
                     <h4>Music Player Web</h4>
-                    <p>Sleek web-based music player built to master DOM manipulation.</p>
-                    <div class="project-tags"><span>HTML</span><span>JS</span></div>
-                    <a href="#" class="live-demo-btn">Live Demo</a>
+                    <p>Interactive web music player.</p>
+                    <div class="project-tags"><span>JS</span><span>CSS</span></div>
+                    <a href="#" class="live-demo-btn">Live View</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="container">
-        <h2 class="section-title">Let's Connect</h2>
+        <h2 class="section-title">Contact</h2>
         <div class="contact-card">
-            <form class="contact-form" id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <textarea rows="4" placeholder="Your Message..."></textarea>
+            <form class="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="4" placeholder="Message"></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
@@ -115,23 +120,29 @@
 </main>
 
 <footer>
-    <p>© 2026 Al-Falaq Pakaya — Built with 💜</p>
+    <p>© 2026 Al-Falaq Pakaya. Built with Passion.</p>
 </footer>
 
 <script>
     new Typed('#animated-subtitle', {
-        strings: ['PPLG Student ✨', 'Gamer 🎮', 'Beginner Web Dev 🚀'],
-        typeSpeed: 70,
-        backSpeed: 45,
+        strings: ['PPLG Student ✨', 'JavaScript Learner 🚀', 'Gaming Enthusiast 🎮'],
+        typeSpeed: 60,
+        backSpeed: 40,
         loop: true,
     });
 
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
-    const closeNav = document.getElementById('closeBtn');
+    const closeBtn = document.getElementById('closeBtn');
 
     hamburger.onclick = () => navLinks.classList.add('active');
-    closeNav.onclick = () => navLinks.classList.remove('active');
+    closeBtn.onclick = () => navLinks.classList.remove('active');
+
+    window.onscroll = () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    };
 </script>
 </body>
 </html>
