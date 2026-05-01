@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Al-Falaq Pakaya | Portfolio v5</title>
+    <title>Al-Falaq Pakaya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,7 +15,7 @@
     <source src="https://www.codeteam.zone.id/files/hsb12dn4G.opus" type="audio/ogg">
 </audio>
 <div id="music-control" onclick="toggleMusic()">
-    <i id="music-icon" class="fas fa-music"></i>
+    <i id="music-icon" class="fas fa-music" style="color: white;"></i>
 </div>
 
 <div class="bg-animate">
@@ -44,13 +44,13 @@
         <div class="hero-image">
             <div class="rotating-card-bg"></div>
             <div class="main-card">
-                <img src="assets/images/FOTO.jpg" alt="Al-Falaq" onerror="this.src='https://placehold.co/400x400/1e1f2e/7C6EFF?text=AL+FALAQ'">
+                <img src="assets/images/FOTO.jpg" alt="Al-Falaq Pakaya" onerror="this.src='https://placehold.co/400x400/1e1f2e/7C6EFF?text=AL+FALAQ'">
             </div>
         </div>
         <div class="hero-text">
             <div class="badge">Available for Projects</div>
             <h1>Hello, I'm <span class="gradient">Al-Falaq</span></h1>
-            <p>A passionate 10th-grade PPLG student at SMK Negeri 1 Gorontalo who loves gaming & coding.</p>
+            <p>A passionate 10th-grade PPLG student who loves gaming & coding. Sharping frontend skills to build modern, interactive experiences.</p>
             <div class="typed-box">🚀 <span id="animated-subtitle"></span></div>
             <div class="btn-group">
                 <a href="#projects" class="btn-primary">View My Work</a>
@@ -63,13 +63,15 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-card">
             <div class="about-card-left">
-                <p>Nama saya Al-Falaq Pakaya biasa di panggil aL, siswa di SMK Negeri 1 Gorontalo dengan jurusan PPLG. Saya fokus di pengembangan frontend dan desain UI.</p>
+                <p>nama saya Al-Falaq Pakaya biasa di panggil aL, siswa di SMK Negeri 1 Gorontalo dengan jurusan PPLG (yang sebelumnya dikenal sebagai RPL). Saya punya ketertarikan besar di dunia coding karena menurut saya, lewat kode kita bisa mengubah ide jadi sesuatu yang nyata.</p>
+                <p style="margin-top: 15px;">🎯 saat ini saya fokus di pengembangan frontend dan desain UI. Perjalanan saya dimulai dari HTML dan CSS, lalu sekarang saya sedang mendalami JavaScript untuk membuat website yang lebih interaktif dan dinamis.</p>
             </div>
             <div class="about-card-right">
                 <ul class="about-list">
                     <li><span class="dot-blue"></span> ✔ Beginner Web Developer</li>
                     <li><span class="dot-blue"></span> 🎮 Hobby: Gaming & Coding</li>
-                    <li><span class="dot-purple"></span> 📍 Gorontalo, Ayula ID</li>
+                    <li><span class="dot-purple"></span> 📍 Based in Gorontalo, Ayula ID</li>
+                    <li><span class="dot-blue"></span> 🌱 Currently learning React</li>
                 </ul>
             </div>
         </div>
@@ -80,12 +82,21 @@
         <div class="class-container card-responsive">
             <div class="class-header">
                 <div class="class-badge">X PPLG 1 - EXPOS ELEVEN</div>
-                <p>Ruang kreativitas dan logika bersatu.</p>
+                <p>Ruang di mana kreativitas dan logika bersatu. Kami bukan sekadar kelas, kami adalah tim pengembang masa depan.</p>
             </div>
-            <div class="class-grid">
-                <div class="class-card"><img src="https://www.codeteam.zone.id/files/njaFyZItZ.jpg"></div>
-                <div class="class-card"><img src="https://www.codeteam.zone.id/files/0lacdXvgR.jpg"></div>
-                <div class="class-card"><img src="https://www.codeteam.zone.id/files/3FIgMMuEI.jpg"></div>
+            <div class="class-grid-v2">
+                <div class="class-card-v2" data-aos="flip-left">
+                    <img src="https://www.codeteam.zone.id/files/njaFyZItZ.jpg" alt="Class Photo 1">
+                    <div class="card-overlay-v2"><span>Solidarity</span></div>
+                </div>
+                <div class="class-card-v2" data-aos="flip-up" data-aos-delay="100">
+                    <img src="https://www.codeteam.zone.id/files/0lacdXvgR.jpg" alt="Class Photo 2">
+                    <div class="card-overlay-v2"><span>Innovation</span></div>
+                </div>
+                <div class="class-card-v2" data-aos="flip-right" data-aos-delay="200">
+                    <img src="https://www.codeteam.zone.id/files/3FIgMMuEI.jpg" alt="Class Photo 3">
+                    <div class="card-overlay-v2"><span>Future</span></div>
+                </div>
             </div>
         </div>
     </section>
@@ -95,11 +106,17 @@
         <div class="org-container card-responsive">
             <div class="org-info">
                 <div class="org-badge">PKS Polresta Gorontalo Kota</div>
-                <p>Belajar disiplin tinggi dan tanggung jawab bersama Polresta Gorontalo Kota.</p>
+                <p>Menjadi bagian dari <strong>Patroli Keamanan Sekolah (PKS)</strong> adalah kebanggaan bagi saya. Di sini saya belajar arti kedisiplinan tinggi, tanggung jawab dalam menjaga ketertiban, dan kerja sama tim di bawah bimbingan Polresta Gorontalo Kota.</p>
             </div>
-            <div class="org-gallery">
-                <img src="https://www.codeteam.zone.id/files/nfLfhnax0.jpg">
-                <img src="https://www.codeteam.zone.id/files/lnVfZXPGy.jpg">
+            <div class="org-gallery-fixed">
+                <div class="photo-wrapper-v2">
+                    <img src="https://www.codeteam.zone.id/files/nfLfhnax0.jpg" alt="PKS Al-Falaq 1">
+                    <div class="org-overlay-v2"><span>Discipline</span></div>
+                </div>
+                <div class="photo-wrapper-v2">
+                    <img src="https://www.codeteam.zone.id/files/lnVfZXPGy.jpg" alt="PKS Al-Falaq 2">
+                    <div class="org-overlay-v2"><span>Honor</span></div>
+                </div>
             </div>
         </div>
     </section>
@@ -107,23 +124,41 @@
     <section id="skills" data-aos="fade-up">
         <h2 class="section-title">Skills & Tools</h2>
         <div class="skill-categories-grid">
-            <div class="skill-category-card">
-                <h3><i class="fas fa-code"></i> Web Dev</h3>
-                <div class="skill-pills">
-                    <span>HTML5</span><span>CSS3</span><span>JS</span>
+            <div class="skill-category-card animated-card">
+                <h3><i class="fas fa-code"></i> Web Development</h3>
+                <div class="skill-pills-grid">
+                    <div class="skill-pill">HTML5</div>
+                    <div class="skill-pill">CSS3</div>
+                    <div class="skill-pill">JavaScript</div>
+                    <div class="skill-pill">Responsive</div>
+                </div>
+            </div>
+            <div class="skill-category-card animated-card">
+                <h3><i class="fas fa-tools"></i> Tools</h3>
+                <div class="skill-pills-grid">
+                    <div class="skill-pill">Git</div>
+                    <div class="skill-pill">VS Code</div>
+                    <div class="skill-pill">Figma</div>
+                    <div class="skill-pill">Vercel</div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects" data-aos="fade-up">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">My Work</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-img"><img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png"></div>
+                <div class="project-img ratio-16-9">
+                    <img src="https://www.codeteam.zone.id/files/gfV1o9Bp5.png" alt="Music Player Cover">
+                </div>
                 <div class="project-info">
                     <h4>Music Player Web</h4>
-                    <a href="#" class="live-demo-btn">View Project</a>
+                    <p>A sleek web-based music player with playlist feature.</p>
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span><span>JS</span>
+                    </div>
+                    <a href="#" target="_blank" class="live-demo-btn">Live View</a>
                 </div>
             </div>
         </div>
@@ -150,21 +185,46 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });
+
     new Typed('#animated-subtitle', {
-        strings: ['PPLG Student', 'Gaming', 'Web Developer'],
-        typeSpeed: 60, backSpeed: 40, loop: true,
+        strings: ['PPLG Student ', 'Gaming ', 'Beginner Web Dev ', 'JS Learner'],
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: true,
     });
+
     const audio = document.getElementById("myAudio");
     const musicIcon = document.getElementById("music-icon");
+
     function toggleMusic() {
-        if (audio.paused) { audio.play(); musicIcon.className = "fas fa-pause"; }
-        else { audio.pause(); musicIcon.className = "fas fa-music"; }
+        if (audio.paused) {
+            audio.play();
+            musicIcon.classList.replace("fa-music", "fa-pause");
+        } else {
+            audio.pause();
+            musicIcon.classList.replace("fa-pause", "fa-music");
+        }
     }
+
+    window.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            musicIcon.classList.replace("fa-music", "fa-pause");
+        }
+    }, { once: true });
+
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
     const closeBtn = document.getElementById('closeBtn');
+
     hamburger.onclick = () => navLinks.classList.add('active');
     closeBtn.onclick = () => navLinks.classList.remove('active');
+
+    window.onscroll = () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    };
 </script>
 </body>
 </html>
