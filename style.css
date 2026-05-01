@@ -1,18 +1,25 @@
+/* ========================================
+   PORTOFOLIO CSS - AL-FALAQ PAKAYA
+   Focus: Glassmorphism & Neon Animations
+   ========================================
+*/
+
 :root {
-    --bg-dark: #0B0C10;
-    --bg-deep: #05060A;
-    --bg-card: #11121C;
+    --bg-dark: #05060A;
+    --bg-deep: #020205;
+    --bg-card: rgba(17, 18, 28, 0.7);
     --primary: #7C6EFF;
     --secondary: #42E6C7;
     --accent: #FF6B9D;
     --text-white: #FFFFFF;
     --text-dim: #8A8DA6;
-    --gradient: linear-gradient(135deg, #7C6EFF 0%, #A45EE5 100%);
-    --gradient-2: linear-gradient(135deg, #42E6C7 0%, #2B9B8A 100%);
-    --shadow-neon: 0 0 15px rgba(124, 110, 255, 0.4);
-    --transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --gradient-primary: linear-gradient(135deg, #7C6EFF 0%, #A45EE5 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(124, 110, 255, 0.3) 0%, rgba(164, 94, 229, 0.3) 100%);
+    --shadow-neon: 0 0 20px rgba(124, 110, 255, 0.3);
+    --transition-smooth: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Base Setup */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     background-color: var(--bg-dark);
@@ -25,170 +32,132 @@ body {
 
 .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-/* ========== 1. BACKGROUND PARTICLES (NEW & COOL) ========== */
-.bg-animate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+/* ========== 1. BACKGROUND ANIMATION ========== */
+.bg-animate { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
 .circle {
-    position: absolute; width: 300px; height: 300px; border-radius: 50%;
-    background: var(--primary); filter: blur(100px); opacity: 0.08;
+    position: absolute; border-radius: 50%;
+    filter: blur(100px); opacity: 0.12;
     animation: moveCircles 25s infinite alternate ease-in-out;
 }
-.circle:nth-child(2) { background: var(--secondary); left: 50%; width: 250px; height: 250px; animation-delay: -5s; }
-.circle:nth-child(3) { background: #A45EE5; right: 0; animation-delay: -10s; }
-.circle:nth-child(4) { background: var(--accent); bottom: 10%; left: 10%; width: 200px; height: 200px; animation-delay: -15s; }
-.circle:nth-child(5) { background: var(--text-white); bottom: -10%; right: 20%; opacity: 0.03; animation-delay: -20s; }
+.circle:nth-child(1) { width: 500px; height: 500px; background: var(--primary); top: -10%; left: -5%; }
+.circle:nth-child(2) { width: 400px; height: 400px; background: var(--secondary); bottom: 10%; right: -5%; animation-delay: -5s; }
+.circle:nth-child(3) { width: 300px; height: 300px; background: var(--accent); top: 30%; left: 40%; animation-delay: -10s; }
 
 @keyframes moveCircles {
-    0% { transform: translate(-10%, -10%); }
-    25% { transform: translate(10%, -5%); }
-    50% { transform: translate(-5%, 10%); }
-    75% { transform: translate(5%, 5%); }
-    100% { transform: translate(0, 0); }
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, 150px) scale(1.3); }
 }
 
-/* ========== 2. NAVBAR CAPSULE (ANIMATED) ========== */
+/* ========== 2. NAVBAR CAPSULE ========== */
 nav {
     position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
     width: 90%; max-width: 1100px; padding: 0.8rem 1.8rem;
-    background: rgba(17, 18, 28, 0.6); backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 50px;
+    background: rgba(17, 18, 28, 0.5); backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50px;
     z-index: 1000; display: flex; justify-content: space-between; align-items: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: all 0.4s ease-in-out;
+    transition: var(--transition-smooth);
 }
-nav.scrolled { top: 0; width: 100%; border-radius: 0; background: var(--bg-deep); border-bottom: 1px solid rgba(124, 110, 255, 0.2); }
-.logo { font-size: 1.4rem; font-weight: 800; transition: transform 0.3s; cursor: pointer;}
-.logo span { color: var(--primary); }
-.logo:hover { transform: scale(1.05) rotate(-2deg); }
+nav.scrolled { top: 10px; background: rgba(5, 6, 10, 0.9); border-color: var(--primary); box-shadow: var(--shadow-neon); }
+
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--primary); text-shadow: 0 0 10px rgba(124, 110, 255, 0.5); }
 
 .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-.nav-links a {
-    color: var(--text-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500;
+.nav-links a { 
+    color: var(--text-dim); text-decoration: none; font-size: 0.9rem; font-weight: 500; 
     transition: 0.3s; position: relative;
 }
 .nav-links a:hover { color: white; }
+.nav-links a:hover::after { width: 100%; }
 .nav-links a::after {
     content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
-    background: var(--gradient); transition: 0.3s; border-radius: 2px;
+    background: var(--gradient-primary); transition: 0.3s;
 }
-.nav-links a:hover::after { width: 100%; }
-.hamburger-btn, .close-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; }
 
-/* ========== 3. HERO (FLOAT & PULSE) ========== */
-.hero {
-    min-height: 100vh; display: flex; flex-direction: column; align-items: center;
-    justify-content: center; text-align: center; gap: 2.5rem; padding-top: 120px;
-}
-.hero-image {
-    order: -1; position: relative;
-    animation: floatHero 5s infinite ease-in-out; /* Float Halus */
-    animation-delay: 0.5s;
-}
-.main-card {
-    width: 250px; height: 250px; border-radius: 2rem; overflow: hidden;
+/* ========== 3. HERO SECTION ========== */
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 2.5rem; padding-top: 100px; }
+.hero-image { position: relative; animation: float 5s infinite ease-in-out; }
+.main-card { 
+    width: 250px; height: 250px; border-radius: 30px; overflow: hidden; 
     border: 3px solid rgba(255,255,255,0.1); z-index: 2; position: relative;
-    transition: var(--transition);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 .main-card img { width: 100%; height: 100%; object-fit: cover; }
-.main-card:hover { transform: scale(1.05) rotate(3deg); }
-
-.rotating-card-bg {
-    position: absolute; width: 280px; height: 280px; background: var(--gradient);
-    border-radius: 40%; filter: blur(40px); opacity: 0.3; left: -15px; top: -15px;
-    animation: pulse 4s infinite ease-in-out; /* Pulse */
+.rotating-card-bg { 
+    position: absolute; width: 280px; height: 280px; background: var(--gradient-primary); 
+    border-radius: 40%; filter: blur(40px); opacity: 0.4; left: -15px; top: -15px;
+    animation: rotateBg 10s infinite linear;
 }
 
-@keyframes floatHero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-@keyframes pulse { 0%, 100% { opacity: 0.3; filter: blur(40px); } 50% { opacity: 0.5; filter: blur(50px); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+@keyframes rotateBg { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-.hero-text h1 {
-    font-size: 3rem; margin-bottom: 1rem; font-weight: 800; line-height: 1.1;
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-.gradient { background: var(--gradient); -webkit-background-clip: text; color: transparent; }
-.badge {
-    background: rgba(124, 110, 255, 0.1); color: var(--primary); padding: 0.5rem 1rem;
-    border-radius: 20px; font-size: 0.8rem; margin-bottom: 1.2rem; display: inline-block;
-    transition: 0.3s;
-}
-.badge:hover { transform: translateY(-3px); box-shadow: var(--shadow-neon); }
+.hero-text h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
+.gradient { background: var(--gradient-primary); -webkit-background-clip: text; color: transparent; }
+.badge { background: rgba(124, 110, 255, 0.1); color: var(--primary); padding: 0.5rem 1.2rem; border-radius: 50px; border: 1px solid rgba(124, 110, 255, 0.2); font-size: 0.8rem; margin-bottom: 1rem; display: inline-block; }
 
-.typed-box {
-    background: rgba(255, 255, 255, 0.05); padding: 0.6rem 1.2rem; border-radius: 20px;
-    margin-top: 1rem; border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s;
-}
-.typed-box:hover { background: rgba(124, 110, 255, 0.08); border-color: rgba(124, 110, 255, 0.2); }
+/* ========== 4. CARDS & SECTIONS (THE COOL STUFF) ========== */
+.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3.5rem; font-weight: 800; }
 
-/* Buttons with Hover Effects */
-.btn-group { display: flex; gap: 1.2rem; margin-top: 2.2rem; justify-content: center; }
-.btn-primary {
-    background: var(--gradient); color: white; padding: 0.9rem 1.8rem; border-radius: 50px;
-    text-decoration: none; font-weight: bold; transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(124, 110, 255, 0.4);
-}
-.btn-primary:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(124, 110, 255, 0.6); }
-
-.btn-secondary {
-    border: 1.5px solid var(--primary); color: white; padding: 0.9rem 1.8rem; border-radius: 50px;
-    text-decoration: none; font-weight: 500; transition: var(--transition);
-}
-.btn-secondary:hover { background: rgba(124, 110, 255, 0.1); transform: scale(1.03); border-color: white;}
-
-/* ========== 4. ABOUT, SKILLS, PROJECTS (CARDS WITH HOVER) ========== */
-.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3.5rem; font-weight: 800; background: var(--gradient-2); -webkit-background-clip: text; color: transparent; }
 .about-card, .skill-category-card, .project-card, .contact-card {
-    background: var(--bg-card); padding: 2rem; border-radius: 1.8rem;
-    border: 1px solid rgba(255,255,255,0.05); transition: 0.4s ease;
-    display: flex; flex-direction: column; gap: 1.5rem;
+    background: var(--bg-card); backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 28px; padding: 2rem;
+    transition: var(--transition-smooth);
 }
-/* Shimmer & Rise on Hover */
+
 .about-card:hover, .skill-category-card:hover, .project-card:hover, .contact-card:hover {
-    border-color: rgba(124, 110, 255, 0.3);
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    transform: translateY(-12px) scale(1.01);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(124, 110, 255, 0.1);
 }
 
-.about-list { list-style: none; margin-top: 1rem; }
-.about-list li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; margin-bottom: 0.6rem; }
-.dot-blue { width: 10px; height: 10px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 8px var(--primary); }
-.dot-purple { width: 10px; height: 10px; background: #A45EE5; border-radius: 50%; }
+/* Organisation Text Highlight */
+.about-card-left strong { color: var(--secondary); }
+.about-card-left p { margin-bottom: 1rem; color: var(--text-dim); }
 
+.about-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 0.8rem; font-size: 0.9rem; }
+.dot-blue { width: 10px; height: 10px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); }
+.dot-purple { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+
+/* ========== 5. SKILLS & PROJECTS ========== */
 .skill-categories-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; }
-.skill-pill {
-    background: rgba(255,255,255,0.05); padding: 0.6rem 1.2rem; border-radius: 20px;
-    font-size: 0.85rem; margin: 0.4rem; display: inline-block; transition: 0.3s;
+.skill-pill { 
+    background: rgba(255, 255, 255, 0.03); padding: 0.6rem 1.2rem; border-radius: 15px; 
+    font-size: 0.85rem; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s;
 }
-.skill-pill:hover { background: rgba(124, 110, 255, 0.1); color: var(--secondary); transform: scale(1.08) rotate(-2deg); }
+.skill-pill:hover { background: var(--gradient-glow); border-color: var(--primary); transform: scale(1.1); }
 
-.project-card { padding: 0; }
-.project-img { position: relative; overflow: hidden; height: 180px;}
-.project-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
-.project-card:hover .project-img img { transform: scale(1.1) rotate(2deg); }
-.project-info { padding: 1.8rem; text-align: center; }
-.live-demo-btn {
-    background: var(--gradient); color: white; text-decoration: none; display: block;
-    padding: 0.8rem; border-radius: 20px; margin-top: 1.2rem; font-weight: bold;
-    transition: 0.3s;
+.project-img { position: relative; border-radius: 20px; overflow: hidden; height: 200px; margin-bottom: 1.5rem; }
+.project-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.project-card:hover .project-img img { transform: scale(1.15); }
+
+/* ========== 6. CONTACT FORM (MODERN LOOK) ========== */
+.contact-card { max-width: 700px; margin: 0 auto; }
+.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.contact-form input, .contact-form textarea {
+    background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px; padding: 1.2rem; color: white; font-family: inherit; transition: 0.3s;
 }
-.live-demo-btn:hover { letter-spacing: 1px; box-shadow: var(--shadow-neon); }
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none; background: rgba(124, 110, 255, 0.05); border-color: var(--primary); box-shadow: var(--shadow-neon);
+}
+.contact-form button {
+    background: var(--gradient-primary); color: white; padding: 1.2rem; border: none;
+    border-radius: 15px; font-weight: 800; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
+}
+.contact-form button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(124, 110, 255, 0.4); letter-spacing: 3px; }
 
-/* MOBILE RESPONSIVE (WAJIB ADA) */
-@media (max-width: 900px) {
-    nav { padding: 0.8rem 1.5rem; }
-    .hero { flex-direction: column !important; padding-top: 140px; }
-    .hero-image { order: -1; margin-bottom: 1rem;}
-    .hero-text h1 { font-size: 2.8rem; }
-    .main-card { width: 220px; height: 220px; }
-    .rotating-card-bg { width: 240px; height: 240px; }
-    
-    .nav-links {
-        position: fixed; top: 0; right: -100%; width: 250px; height: 100vh;
-        background: #111; flex-direction: column; padding: 7rem 2rem;
-        transition: 0.4s ease-in-out; backdrop-filter: blur(20px); border-left: 2px solid var(--primary);
-    }
-    .nav-links.active { right: 0; }
-    .hamburger-btn, .close-btn { display: block; }
+/* ========== 7. FOOTER & RESPONSIVE ========== */
+footer { padding: 4rem 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 4rem; }
+footer p { color: var(--text-dim); font-size: 0.9rem; }
+
+@media (max-width: 768px) {
+    .hero-text h1 { font-size: 2.5rem; }
+    .nav-links { display: none; } /* Hamburger menu handles this in HTML */
+    .about-card { flex-direction: column; }
 }
 
-/* Animations COLLECTION */
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+/* Animation Reveal Utility */
+section { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+section.visible { opacity: 1; transform: translateY(0); }
